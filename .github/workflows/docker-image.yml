@@ -1,0 +1,23 @@
+name: deploy to a server on push
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy-to-server:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: appleboy/ssh-action@master 
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd ${{ secrets.WORK_DIR }}
+          git checkout ${{ secrets.MAIN_BRANCH }}
+          git pull
+          chmod +x ./docker-stuff.sh
+          ./docker-stuff.sh
