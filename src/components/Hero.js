@@ -22,12 +22,6 @@ function Hero({ photo, name }) {
             {name}
           </h2>
           {windowWidth.current > 768 ? <h2 className=' text-sm uppercase pb-2 tracking-[15px]'>Architect | Make-up Artist | Designer</h2> : <h2 className=' text-sm uppercase pb-2 tracking-[15px]'>Architect<br/>Make-up Artist<br/>Designer</h2> }
-          
-          
-          {/* <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
-            <span className='text-white z-10'>{text}</span>
-            <Cursor cursorColor="white"/>
-          </h1> */}
           <div className='pt-5'>
             <a href="#about">
               <button className='heroButton'>About</button>

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 
-function ExpCard({ img, whatHaveIDoneHere, title, date }) {
+function ExpCard({ image, desc, title, date }) {
     return (
         <div
             className='w-screen flex-shrink-1 snap-center flex flex-col space-y-5
@@ -20,7 +20,7 @@ function ExpCard({ img, whatHaveIDoneHere, title, date }) {
                     duration: 1,
                 }}
                 viewport={{ once:true }}
-                src={img}
+                src={image}
                 alt=""
                 className='rounded-2xl shadow-xl sm:w-[500px] sm:h-[350px] w-[250px] h-[200px] object-contain p-5'
             />
@@ -33,7 +33,7 @@ function ExpCard({ img, whatHaveIDoneHere, title, date }) {
                 </span>
 
                 <pre className='text-slate-200 text-md sm:w-[500px] w-[250px] text-justify'>
-                    {whatHaveIDoneHere}
+                    {desc}
                 </pre>
 
             </div>

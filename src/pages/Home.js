@@ -27,10 +27,6 @@ function Home() {
 
   const { aboutDataAPI, expDataAPI } = useLoaderData().results;
 
-  console.log(aboutDataAPI)
-
-  console.log()
-
   return (
     <div>
         <section id="hero" className="snap-start">

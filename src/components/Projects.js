@@ -40,7 +40,7 @@ function Projects() {
                 basis-full
                 mt-20
             '> 
-                <Link to='/projects/archtectural'>
+                <Link to='/projects/architecture'>
                     <Category
                         categoryName='architecture'
                         categoryImg={CharacterizationsImg}
@@ -48,13 +48,13 @@ function Projects() {
                 </Link>
                 <Link to='/projects/graphic'>
                     <Category
-                        categoryName='graphics'
+                        categoryName='graphic'
                         categoryImg={GraphicsImg}
                     />
                 </Link>
                 <Link to='/projects/characterization'>
                         <Category
-                            categoryName='characterizations'
+                            categoryName='characterization'
                             categoryImg={CharacterizationsImg}
                         />
                 </Link>
