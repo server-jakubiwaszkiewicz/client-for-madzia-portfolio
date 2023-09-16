@@ -3,9 +3,12 @@ import { AiOutlineArrowUp } from 'react-icons/ai'
 import ProjectImg from '../assets/projects.png'
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+
 
 export default function Portfolio({ data }) {
-
+  const API_URL = process.env.REACT_APP_API_URL;
+  let { dataProjectsAPI } = useLoaderData().results;
   const categoryParam = useParams().id;
 
     return (

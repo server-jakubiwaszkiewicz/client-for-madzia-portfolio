@@ -1,10 +1,10 @@
 import React from 'react';
 import ExpCard from './ExpCard';
 
-function WorkExperience({experiences}) {
+function WorkExperience({ expDataAPI }) {
 
-    console.log(experiences)
-
+    console.log("exp:", expDataAPI)
+    const API_URL = process.env.REACT_APP_API_URL;
     return (
         <div>
             <div className='
@@ -37,13 +37,13 @@ function WorkExperience({experiences}) {
                     scrollbar-track-gray-400/20
                     scrollbar-thumb-[#ffffff]'
                 >
-                    {experiences.map((x) => (
+                    {expDataAPI.data.map((item) => (
                         <ExpCard
-                            key={x.id}
-                            img={x.attributes.img}
-                            title={x.attributes.title}
-                            date={x.attributes.date}
-                            whatHaveIDoneHere={x.attributes.whatHaveIDoneHere}
+                            key={item.id}
+                            image={`${API_URL}${item.attributes.image.data.attributes.formats.large?.url || item.attributes.image.data.attributes.formats.small.url}`}
+                            title={item.attributes.title}
+                            date={item.attributes.date}
+                            whatHaveIDoneHere={item.attributes.description}
                         />))}
                 </div>
             </div>

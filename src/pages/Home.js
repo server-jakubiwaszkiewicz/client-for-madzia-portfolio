@@ -6,7 +6,7 @@ import Projects from '../components/Projects';
 import ContactMe from '../components/ContactMe';
 import { AiOutlineArrowUp } from 'react-icons/ai'
 import Loading from '../components/Loading';
-import { useLoaderData } from '../hooks/useLoaderData';
+import { useLoaderData } from 'react-router-dom';
 
 /*
 const Hero =  lazy(() => import('../components/Hero'));
@@ -27,14 +27,15 @@ function Home() {
 
   const { aboutDataAPI, expDataAPI } = useLoaderData().results;
 
+  console.log(aboutDataAPI)
+
+  console.log()
 
   return (
     <div>
-
-
         <section id="hero" className="snap-start">
           <Hero
-            photo={`${API_URL}${aboutDataAPI.data.attributes.photos.data[0].attributes.formats.large.url}`}
+            photo={`${API_URL}${aboutDataAPI.data.attributes.photo1.data.attributes.formats.large.url}`}
             name={aboutDataAPI.data.attributes.name}
           />
         </section>
@@ -42,7 +43,7 @@ function Home() {
         {/* {About} */}
         <section id="about" className="snap-center">
           <About
-            photo={`${API_URL}${aboutDataAPI.data.attributes.photos.data[0].attributes.formats.large.url}`}
+            photo={`${API_URL}${aboutDataAPI.data.attributes.photo2.data.attributes.formats.small.url}`}
             desc={aboutDataAPI.data.attributes.description}
           />
         </section>
@@ -50,7 +51,7 @@ function Home() {
         {/* {Experience} */}
         <section id="experience" className="snap-center">
           <WorkExperience
-            experiences={expDataAPI}
+            expDataAPI={expDataAPI}
           />
         </section>
 
